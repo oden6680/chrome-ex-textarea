@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "GitLab and GitHub Textarea Helper",
+  "version": "1.0",
+  "description": "Enhances textarea functionalities on GitLab and GitHub.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gitlab.com/*",
+        "https://github.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "commands": {
+    "toggle-checkbox": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Space",
+        "mac": "Command+Shift+Space"
+      },
+      "description": "Toggle checkbox"
+    }
+  }
+}
